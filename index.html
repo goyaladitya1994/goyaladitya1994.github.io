@@ -19,7 +19,7 @@ jQuery(document).ready(function() {
    
   start();
 
-  jQuery('body').bind('touchstart',function() {
+  jQuery('iframe').contents().bind('touchstart',function() {
      clearTimeout(timer);
   }).bind('touchend',function(e) {
      var pageX = e.pageX || e.clientX,
