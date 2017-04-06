@@ -1,0 +1,44 @@
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<title></title>
+<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+
+<script>
+function refresh() {
+   window.location.reload(true);
+}
+
+var timer;
+function start() {
+  timer = setTimeout(function(){refresh()}, 5000);
+}
+
+jQuery(document).ready(function() {
+  start();
+
+  jQuery('body').mouseenter(function() {
+     clearTimeout(timer);
+  }).mouseleave(function(e) {
+     var pageX = e.pageX || e.clientX,
+         pageY = e.pageY || e.clientY;
+
+      if(pageX <= 0 || pageY <= 0) {
+        start();
+      }else {
+        clearTimeout(timer);
+      }
+  });
+});
+       </script>
+<style>
+body {
+    margin: 0;
+}
+</style>
+    </head>
+<body>
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfyXHjKhJEoz7Lo0B0TF-4xGEHAQgFUHxVNpRHjwl0bmx_5nA/viewform?embedded=true" width = "100%" height = "100%" frameborder="0" marginheight="0" marginwidth="0">Loading...
+</iframe>
+ </body>
+ </html>
