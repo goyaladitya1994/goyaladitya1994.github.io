@@ -17,9 +17,9 @@ function start() {
 jQuery(document).ready(function() {
   start();
 
-  jQuery('body').mouseenter(function() {
+  jQuery('body').bind('touchstart',function() {
      clearTimeout(timer);
-  }).mouseleave(function(e) {
+  }).bind('touchend',function(e) {
      var pageX = e.pageX || e.clientX,
          pageY = e.pageY || e.clientY;
 
